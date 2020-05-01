@@ -5,8 +5,19 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.assertEquals;
+
 public class WebDriverBasicsLocatorsWithNameTest extends AbstractChromeWebDriverTest {
-	
+
+
+	@Test
+	public void testTitle() {
+
+		driver.get("http://localhost:8080/pages/login.html");
+		assertEquals("SB Admin 2 - Bootstrap Admin Theme", driver.getTitle());
+
+	}
+
 	@Test
 	public void testGetInformationAboutEmail() {
 		driver.get("http://localhost:8080/pages/login.html");
